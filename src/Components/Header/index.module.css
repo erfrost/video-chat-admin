@@ -1,0 +1,30 @@
+.container {
+  width: calc(100% - 80px);
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #292758;
+  padding: 0 40px;
+  position: relative;
+}
+.input {
+  width: 450px;
+  padding: 15px 10px;
+  border: transparent;
+  border-radius: 8px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:focus-visible {
+    outline: none;
+  }
+  &::placeholder {
+    font-weight: 500;
+  }
+}
