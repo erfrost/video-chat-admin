@@ -10,7 +10,7 @@ import GirlItem from "../Components/GirlItem";
 const Home = () => {
   const [girls, setGirls] = useState([]);
   const router = useNavigate();
-
+  console.log(girls);
   useEffect(() => {
     async function getGirls() {
       try {
@@ -41,9 +41,13 @@ const Home = () => {
       <div className={styles.container}>
         <Header setGirls={setGirls} />
         <div className={styles.list}>
-          {girls.map((girl) => (
-            <GirlItem girl={girl} setGirls={setGirls} />
-          ))}
+          {girls.length ? (
+            girls.map((girl) => (
+              <GirlItem girl={girl} setGirls={setGirls} key={girl._id} />
+            ))
+          ) : (
+            <span className={styles.nullText}>Ничего не найдено</span>
+          )}
         </div>
       </div>
     </MainLayout>

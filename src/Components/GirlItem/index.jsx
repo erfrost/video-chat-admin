@@ -47,12 +47,13 @@ const GirlItem = ({ girl, setGirls }) => {
           </div>
         </div>
         <div className={styles.passportContainer}>
-          {girl.passport.map((image) => (
+          {girl.passport.map((image, index) => (
             <img
               src={image}
               alt="passport"
               className={styles.image}
               onClick={() => setFullScreenImage(image)}
+              key={index}
             />
           ))}
         </div>
